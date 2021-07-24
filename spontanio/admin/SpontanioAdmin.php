@@ -13,10 +13,10 @@ class SpontanioAdmin
 	 */
 	public function __construct()
 	{
-		//Add admin page to define basic plugin settings.
+		//Adds admin page to define basic plugin settings.
 		add_action( 'admin_menu', array( $this, 'addSettingsPage' ) );
 
-		//Initialize form fields for plugin settings.
+		//Initializes form fields for plugin settings.
 		add_action( 'admin_init', array( $this, 'optionsInit' ) );
 
 		//Adds setting link to plugin page.
@@ -27,7 +27,7 @@ class SpontanioAdmin
 	}
 
 	/**
-	 * Redirects to Setting page after activation
+	 * Redirects to Setting page after activation.
 	 */
 	public function activation_redirect( $plugin ) {
 		if( $plugin == SPONTANIO_PLUGIN ) {
@@ -40,7 +40,7 @@ class SpontanioAdmin
 	 */
 	public function addSettingsPage()
 	{
-		$icon = base64_encode(include(SPONTANIO_PLUGIN_PATH . 'admin/templates/spontanio-logo.php'));
+		$icon = base64_encode( include( SPONTANIO_PLUGIN_PATH . 'admin/templates/spontanio-logo.php' ) );
 		add_menu_page(
 			'Spontanio Plugin Settings',
 			'Spontanio',
@@ -58,12 +58,12 @@ class SpontanioAdmin
 	public function showSettingsPage()
 	{
 		if ( current_user_can( 'manage_options' ) ) {
-			View::showContent( 'admin/templates/settings-page' );
+			SpontanioView::showContent( 'admin/templates/settings-page' );
 		}
 	}
 
 	/**
-	 * Initialize form fields for plugin settings.
+	 * Initializes form fields for plugin settings.
 	 */
 	public function optionsInit()
 	{
@@ -89,7 +89,7 @@ class SpontanioAdmin
 	}
 
 	/**
-	 * Sanitize options
+	 * Sanitizes options.
 	 */
 	public function sanitize( $inputOptions )
 	{
@@ -121,7 +121,7 @@ class SpontanioAdmin
 	 */
 	public function showSectionDescription()
 	{
-		View::showContent( 'admin/templates/settings-section-description' );
+		SpontanioView::showContent( 'admin/templates/settings-section-description' );
 	}
 
 	/**
@@ -134,7 +134,7 @@ class SpontanioAdmin
 		$options = get_option( self::OPTION_NAME );
 		$optionName = self::OPTION_NAME . '[' . $option . ']';
 		$optionValue = isset( $options[$option] ) ? $options[$option] : '';
-		View::showContent( 'admin/templates/settings-text-field', array(
+		SpontanioView::showContent( 'admin/templates/settings-text-field', array(
 			'option_name' => esc_attr($optionName),
 			'option_value' => esc_attr($optionValue),
 		) );
@@ -145,7 +145,7 @@ class SpontanioAdmin
 	 */
 	public function addSettingsLink( $links )
 	{
-		$links[] = View::getContent( 'admin/templates/settings-link', array(
+		$links[] = SpontanioView::getContent( 'admin/templates/settings-link', array(
 			'settingsUrl' => admin_url( 'admin.php?page=' . self::OPTION_GROUP ),
 		) );
 		return $links;
@@ -161,20 +161,7 @@ class SpontanioAdmin
 	}
 
 	/**
-	 * Checks if plugin settings has been saved.
-     * @deprecated
-	 */
-	public static function isSettingsSaved()
-	{
-		$options = get_option( self::OPTION_NAME );
-		if ( isset( $options[self::URI_ROOM_NAME] ) && ( ! empty( $options[self::URI_ROOM_NAME] ) ) ) {
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * Checks is plugin settings has been saved.
+	 * Checks if entered room name is valid.
 	 */
 	public static function isValidRoomName( $roomName )
 	{

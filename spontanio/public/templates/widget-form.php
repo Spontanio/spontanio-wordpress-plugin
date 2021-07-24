@@ -6,7 +6,6 @@
 <p>
 	<label for="<?php echo esc_attr( $roomNameFieldName ); ?>">Room Name <i>(6+ alphanumerical chars)</i>:</label>
 	<br>
-
 	<input id="<?php echo esc_attr( $roomNameFieldId ); ?>" name="<?php echo esc_attr( $roomNameFieldName); ?>" type="text" value="<?php echo esc_attr( $roomName ); ?>" />
 </p>
 <p>
@@ -28,51 +27,49 @@
 	</select>
 </p>
 <p>
-    Position:
-    <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
-        <div style="padding-right: 15px; margin-bottom: 15px;">
-            <label style="display: block; padding-bottom: 5px">
-                <input type="radio" value="left-top" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'left-top' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
-                Left Top
-            </label>
-
-            <label style="display: block; padding-bottom: 5px">
-                <input type="radio" value="left-middle" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'left-middle' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
-                Left Middle
-            </label>
-
-            <label style="display: block; padding-bottom: 5px">
-                <input type="radio" value="left-bottom" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'left-bottom' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
-                Left Bottom
-            </label>
-        </div>
-        <div style="padding-right: 15px; margin-bottom: 15px;">
-            <label style="display: block; padding-bottom: 5px">
-                <input type="radio" value="center-top" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'center-top' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
-                Center Top
-            </label>
-            <label style="display: block; padding-bottom: 5px">
-                <input type="radio" value="center-middle" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'center-middle' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
-                Center Middle
-            </label>
-            <label style="display: block; padding-bottom: 5px">
-                <input type="radio" value="center-bottom" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'center-bottom' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
-                Center Bottom
-            </label>
-        </div>
-        <div style="padding-right: 15px; margin-bottom: 15px;">
-            <label style="display: block; padding-bottom: 5px">
-                <input type="radio" value="right-top" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'right-top' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
-                Right Top
-            </label>
-            <label style="display: block; padding-bottom: 5px">
-                <input type="radio" value="right-middle" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'right-middle' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
-                Right Middle
-            </label>
-            <label style="display: block; padding-bottom: 5px">
-                <input type="radio" value="right-bottom" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'right-bottom' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
-                Right Bottom
-            </label>
-        </div>
-    </div>
+	Position:
+	<div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+		<div style="padding-right: 15px; margin-bottom: 15px;">
+			<label style="display: block; padding-bottom: 5px">
+				<input type="radio" value="spontanio-left-top" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'spontanio-left-top' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
+				Left Top
+			</label>
+			<label style="display: block; padding-bottom: 5px">
+				<input type="radio" value="spontanio-left-middle" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'spontanio-left-middle' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
+				Left Middle
+			</label>
+			<label style="display: block; padding-bottom: 5px">
+				<input type="radio" value="spontanio-left-bottom" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'spontanio-left-bottom' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
+				Left Bottom
+			</label>
+		</div>
+		<div style="padding-right: 15px; margin-bottom: 15px;">
+			<label style="display: block; padding-bottom: 5px">
+				<input type="radio" value="spontanio-center-top" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'spontanio-center-top' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
+				Center Top
+			</label>
+			<label style="display: block; padding-bottom: 5px">
+				<input type="radio" value="spontanio-center-middle" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'spontanio-center-middle' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
+				Center Middle
+			</label>
+			<label style="display: block; padding-bottom: 5px">
+				<input type="radio" value="spontanio-center-bottom" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'spontanio-center-bottom' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
+				Center Bottom
+			</label>
+		</div>
+		<div style="padding-right: 15px; margin-bottom: 15px;">
+			<label style="display: block; padding-bottom: 5px">
+				<input type="radio" value="spontanio-right-top" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'spontanio-right-top' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
+				Right Top
+			</label>
+			<label style="display: block; padding-bottom: 5px">
+				<input type="radio" value="spontanio-right-middle" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'spontanio-right-middle' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
+				Right Middle
+			</label>
+			<label style="display: block; padding-bottom: 5px">
+				<input type="radio" value="spontanio-right-bottom" name="<?php echo esc_attr( $positionFieldName ); ?>" <?php checked( $position, 'spontanio-right-bottom' ); ?> id="<?php echo esc_attr( $positionFieldId ); ?>" />
+				Right Bottom
+			</label>
+		</div>
+	</div>
 </p>

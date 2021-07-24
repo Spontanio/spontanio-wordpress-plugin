@@ -3,7 +3,7 @@
 class SpontanioWidget extends \WP_Widget
 {
 	const DEFAULT_BUTTON_NAME = 'Video Chat';
-	const DEFAULT_POSITION = 'center-middle';
+	const DEFAULT_POSITION = 'spontanio-center-middle';
 
 	/**
 	 * SpontanioWidget constructor.
@@ -56,7 +56,7 @@ class SpontanioWidget extends \WP_Widget
 
 		$position = isset( $instance['position'] ) ? $instance['position'] : self::DEFAULT_POSITION;
 
-		View::showContent('public/templates/widget-iframe', array(
+		SpontanioView::showContent('public/templates/widget-iframe', array(
 			'args' => $args,
 			'buttonName' => $buttonName,
 			'roomName' => $roomName,
@@ -112,7 +112,7 @@ class SpontanioWidget extends \WP_Widget
 		$positionFieldName = $this->get_field_name( 'position' );
 		$positionFieldId = $this->get_field_id( 'position' );
 
-		View::showContent( 'public/templates/widget-form', array(
+		SpontanioView::showContent( 'public/templates/widget-form', array(
 			'buttonName' => $buttonName,
 			'buttonNameFieldName' => $buttonNameFieldName,
 			'buttonNameFieldId' => $buttonNameFieldId,

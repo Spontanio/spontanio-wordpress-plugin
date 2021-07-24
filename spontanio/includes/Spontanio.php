@@ -8,7 +8,7 @@ class Spontanio
 	public static function getComponents()
 	{
 		return array(
-			'View'            => 'includes/View.php',
+			'SpontanioView'            => 'includes/SpontanioView.php',
 			'SpontanioWidget' => 'includes/SpontanioWidget.php',
 			'SpontanioShortcode' => 'includes/SpontanioShortcode.php',
 			'SpontanioBlock' => 'includes/SpontanioBlock.php',

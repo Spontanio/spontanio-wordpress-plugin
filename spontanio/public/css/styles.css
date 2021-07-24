@@ -8,7 +8,6 @@
 	background-color: #fff;
 	margin-top: 0 !important;
 }
-
 .spontanio-container .spontanio-title {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -20,7 +19,6 @@
 	font-size: 13px;
 	margin: 0 auto;
 }
-
 #spontanio-onload-close,
 #spontanio-widget-close,
 #spontanio-shortcode-close,
@@ -35,55 +33,56 @@ iframe#spontanio-block-iframe {
 	border: 0;
 	overflow: hidden;
 }
-.security-message {
+
+.spontanio-security-message {
 	border: solid 1px #000000;
 	padding: 2vh;
 	margin: 2vh;
 }
 
-.left-top {
+.spontanio-left-top {
 	top: 0;
 	left: 0;
 	margin: 0;
 }
-.center-top {
+.spontanio-center-top {
 	top: 0;
 	left: 0;
 	right: 0;
 	margin: auto;
 }
-.right-top {
+.spontanio-right-top {
 	top: 0;
 	right: 0;
 	margin: 0;
 }
-.left-middle {
+.spontanio-left-middle {
 	left: 0;
 	top: 50%;
 	transform: translate(0, -50%);
 }
-.center-middle {
+.spontanio-center-middle {
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
-.right-middle {
+.spontanio-right-middle {
 	right: 0;
 	top: 50%;
 	transform: translate(0, -50%);
 }
-.left-bottom {
+.spontanio-left-bottom {
 	bottom: 0;
 	left: 0;
 	margin: 0;
 }
-.center-bottom {
+.spontanio-center-bottom {
 	bottom: 0;
 	left: 0;
 	right: 0;
 	margin: auto;
 }
-.right-bottom {
+.spontanio-right-bottom {
 	bottom: 0;
 	right: 0;
 	margin: 0;

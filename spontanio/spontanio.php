@@ -3,8 +3,10 @@
 /*
 Plugin Name:       Spontanio
 Plugin URI:        https://spontan.io
-Description:       Free and easy group video chat for your website visitors. Based on the secure, standards-based WebRTC technology. Super easy to get started, with endless possibilities for customization to enhance your brand.
+Description:       Free group video chat for your website! Super easy to set up and use. Customize for your brand. Options for selling, scheduling, and more.
 Version:           1.0.0
+Requires at least: 5.4
+Requires PHP:      5.6
 Author:            Spontanio
 Author URI:        https://spontan.io/about
 License:           GPLv2 or later
@@ -22,15 +24,15 @@ define( 'SPONTANIO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 require_once SPONTANIO_PLUGIN_PATH . 'includes/SpontanioActivator.php';
 
 /**
- * Activate the plugin.
+ * Activates the plugin.
  */
 function spontanio_activate() {
-    SpontanioActivator::activate();
+	SpontanioActivator::activate();
 }
 register_activation_hook( __FILE__, 'spontanio_activate' );
 
 /**
- * Deactivate the plugin.
+ * Deactivates the plugin.
  */
 function spontanio_deactivate() {
 	flush_rewrite_rules();
@@ -38,10 +40,7 @@ function spontanio_deactivate() {
 register_deactivation_hook( __FILE__, 'spontanio_deactivate' );
 
 /**
- * Run the plugin.
+ * Runs the plugin.
  */
 require SPONTANIO_PLUGIN_PATH . 'includes/Spontanio.php';
-if ( class_exists( 'Spontanio' ) ) {
-	Spontanio::run();
-}
-
+Spontanio::run();

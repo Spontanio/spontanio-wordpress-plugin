@@ -1,19 +1,19 @@
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
 	var iframeContainer;
 	var closeButtons = [];
 	var buttons = document.querySelectorAll( '.spontanio-button' );
 
-	var widgetWrap = document.querySelector('#widget-data');
-	var shortcodeWrap = document.querySelector('#shortcode-data');
-	var blockWrap = document.querySelector('#block-data');
+	var widgetWrap = document.querySelector( '#spontanio-widget-data' );
+	var shortcodeWrap = document.querySelector( '#spontanio-shortcode-data' );
+	var blockWrap = document.querySelector( '#spontanio-block-data' );
 
 	if (
 		shortcodeWrap !== null &&
 		blockWrap !== null &&
-		shortcodeWrap.classList.contains( 'onload-data' ) &&
-		blockWrap.classList.contains( 'onload-data' )
+		shortcodeWrap.classList.contains( 'spontanio-onload-data' ) &&
+		blockWrap.classList.contains( 'spontanio-onload-data' )
 	) {
-		addPopupContainer( document.querySelector('.onload-data') );
+		addPopupContainer( document.querySelector( '.spontanio-onload-data' ) );
 	} else {
 		addPopupContainer( blockWrap );
 		addPopupContainer( shortcodeWrap );
@@ -52,13 +52,13 @@ window.onload = function() {
 			elementWrap.style.height = elementData.dataset.height;
 			elementWrap.innerHTML =
 				'<div id="'+ elementWrap.id +'-title" class="spontanio-title">\n' +
-				'<p>Video chat powered by <a href="https://spontan.io" target="_blank" title="Spontanio">Spontanio</a></p>\n' +
-				'<span id="' + elementWrap.id + '-close">\n' +
-				'<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">\n' +
-				'<path d="M0 0h24v24H0V0z" fill="none"/>\n' +
-				'<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>\n' +
-				'</svg>\n' +
-				'</span>\n' +
+					'<p>Spontanio video chat</p>\n' +
+					'<span id="' + elementWrap.id + '-close">\n' +
+					'<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">\n' +
+						'<path d="M0 0h24v24H0V0z" fill="none"/>\n' +
+						'<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>\n' +
+					'</svg>\n' +
+					'</span>\n' +
 				'</div>';
 			document.body.append( elementWrap );
 
@@ -70,7 +70,7 @@ window.onload = function() {
 	function spontanioOpen( event ) {
 		buttons.forEach( function ( button ) {
 			button.setAttribute( 'disabled', 'disabled' );
-		});
+		} );
 		addIframe( event.target.id );
 	}
 
@@ -78,7 +78,7 @@ window.onload = function() {
 	function spontanioClose( event ) {
 		if ( buttons.length ) {
 			buttons.forEach(function (button) {
-				button.removeAttribute('disabled');
+				button.removeAttribute( 'disabled' );
 			});
 		}
 		removeIframe( event.target.parentElement.id );
@@ -87,13 +87,13 @@ window.onload = function() {
 	// add iFrame to the page
 	function addIframe( id ) {
 		switch ( id ) {
-			case 'widget-button':
+			case 'spontanio-widget-button':
 				iframeContainer = document.querySelector( '#spontanio-widget' );
 				break;
-			case 'block-button':
+			case 'spontanio-block-button':
 				iframeContainer = document.querySelector( '#spontanio-block' );
 				break;
-			case 'shortcode-button':
+			case 'spontanio-shortcode-button':
 				iframeContainer = document.querySelector( '#spontanio-shortcode' );
 				break;
 			case 'spontanio-onload':
@@ -148,8 +148,8 @@ window.onload = function() {
 	function getSslMessageElement( idValue ) {
 		var messageNode = document.createElement( 'p' );
 		messageNode.setAttribute( 'id', idValue );
-		messageNode.setAttribute( 'class', 'security-message' );
+		messageNode.setAttribute( 'class', 'spontanio-security-message' );
 		messageNode.innerHTML = 'Sorry, but to protect your privacy, Spontanio can only be used on sites that use SSL. Please change the URL to begin with https://';
 		return messageNode;
 	}
-}
+});

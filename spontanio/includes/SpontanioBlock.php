@@ -42,6 +42,6 @@ class SpontanioBlock
 	public function setDefaultSettings()
 	{
 		$options = get_option( SpontanioAdmin::OPTION_NAME );
-		View::showContent( 'public/templates/default-settings', $options );
+		SpontanioView::showContent( 'public/templates/default-settings', $options );
 	}
 }

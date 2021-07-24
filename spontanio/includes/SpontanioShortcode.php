@@ -1,29 +1,34 @@
 <?php
 
-
 class SpontanioShortcode
 {
 	const DEFAULT_VALUE = '100%';
 	const DEFAULT_BUTTON_TEXT = 'Video Chat';
-	const DEFAULT_POSITION = 'center-middle';
+	const DEFAULT_POSITION = 'spontanio-center-middle';
 
 	private $positionValues = array(
-		'left-top' => array( 'lefttop', 'topleft' ),
-		'left-middle' => array( 'leftmiddle', 'middleleft', 'leftcenter', 'centerleft' ),
-		'left-bottom' => array( 'leftbottom', 'bottomleft' ),
-		'center-top' => array( 'centertop', 'topcenter', 'middletop', 'topmiddle' ),
-		'center-middle' => array( 'centermiddle', 'middlecenter' ),
-		'center-bottom' => array( 'centerbottom', 'bottomcenter', 'middlebottom', 'bottommiddle' ),
-		'right-top' => array( 'righttop', 'topright' ),
-		'right-middle' => array( 'rightmiddle', 'middleright', 'rightcenter', 'centerright' ),
-		'right-bottom' => array( 'rightbottom', 'bottomright' ),
+		'spontanio-left-top' => array( 'lefttop', 'topleft' ),
+		'spontanio-left-middle' => array( 'leftmiddle', 'middleleft', 'leftcenter', 'centerleft' ),
+		'spontanio-left-bottom' => array( 'leftbottom', 'bottomleft' ),
+		'spontanio-center-top' => array( 'centertop', 'topcenter', 'middletop', 'topmiddle' ),
+		'spontanio-center-middle' => array( 'centermiddle', 'middlecenter' ),
+		'spontanio-center-bottom' => array( 'centerbottom', 'bottomcenter', 'middlebottom', 'bottommiddle' ),
+		'spontanio-right-top' => array( 'righttop', 'topright' ),
+		'spontanio-right-middle' => array( 'rightmiddle', 'middleright', 'rightcenter', 'centerright' ),
+		'spontanio-right-bottom' => array( 'rightbottom', 'bottomright' ),
 	);
 
+	/**
+	 * SpontanioShortcode constructor.
+	 */
 	public function __construct()
 	{
 		add_shortcode( 'video-chat', array( $this, 'videoChatShortcode' ) );
 	}
 
+	/**
+	 * Defines shortcode handle actions.
+	 */
 	public function videoChatShortcode( $attributes ) {
 		$options = get_option( SpontanioAdmin::OPTION_NAME );
 
@@ -47,7 +52,7 @@ class SpontanioShortcode
 
 		$attributes['position'] = $this->getPosition( $attributes['position'] );
 
-		return View::getContent( 'public/templates/shortcode-iframe', array(
+		return SpontanioView::getContent( 'public/templates/shortcode-iframe', array(
 			'roomName' => $attributes['roomname'],
 			'buttonText' => $attributes['buttontext'],
 			'autoLaunch' => $attributes['autolaunch'],
@@ -57,6 +62,9 @@ class SpontanioShortcode
 			) );
 	}
 
+	/**
+	 * Returns validated input size.
+	 */
 	private function getSize( $sizeStyle )
 	{
 		$inputStyle = trim ( strtolower( $sizeStyle ) );
@@ -68,8 +76,13 @@ class SpontanioShortcode
 			$value = trim( substr( $inputStyle, 0, strlen( $inputStyle ) - 1 ) );
 			return ( ( is_numeric( $value ) ) && ( ( int ) $value >= 20 || ( int ) $value <= 100 ) ) ? $value . '%' : self::DEFAULT_VALUE;
 		}
+
+		return self::DEFAULT_VALUE;
 	}
 
+	/**
+	 * Returns validated class name for position.
+	 */
 	private function getPosition( $position )
 	{
 		$inputPosition = preg_replace( '/[^0-9a-z]/', '', strtolower( $position ) );
