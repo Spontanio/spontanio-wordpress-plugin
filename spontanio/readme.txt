@@ -133,10 +133,12 @@ For more complete information, please see the [FAQ page](https://spontan.io/faq)
 == Screenshots ==
 
 1. Free and easy video, audio, and text chat for live group interaction
-2. New room wizard (1): choose a name for your room, which the plugin will use for visitors
-3. New room wizard (2): select a pre-designed theme to set the vibe you're looking for, or create your own
-4. New room wizard (3): specify an optional entry code if you want to limit access to the room
-5. New room wizard (4): a premium account lets you display announcements, accept donations, and much more
+2. Choose between 3 basic modes to determine how you want to participate
+3. Set the vibe in your room with a pre-built theme, or create your own, for example with your company logo
+4. Write custom announcements that visitors will see when they enter the room (premium feature)
+5. Limit who can participate with an entry code (free), or further requirements such as VIP (premium feature)
+6. Leave your room open 24x7 (free), or set opening times and/or special events (premium feature)
+7. Ask visitors for donations, or list products for sale with links to your online store (premium feature)
 6. Summary of Spontanio features, comparing basic (*Free4all*) to premium (*BizPlus*)
 
 == Changelog ==
