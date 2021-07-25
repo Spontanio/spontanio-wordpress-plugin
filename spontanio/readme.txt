@@ -52,6 +52,12 @@ The code is open source and we welcome contributors at [Github](https://github.c
 
 == Frequently Asked Questions ==
 
+= Do I need an API key to use the plugin? =
+
+No, you can just go ahead and start using it! All we need is a room name, which you enter in the Spontanio settings,
+or when you add a Video Chat block to a page. The room can be one that already exists, or we will
+guide you through the process of creating a new one.
+
 = Do I, the website developer or owner, need a Spontanio account? =
 
 No, you can use our video chat service without signing up. However anonymous rooms are reset after 7 days,
