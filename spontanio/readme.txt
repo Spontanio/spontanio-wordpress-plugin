@@ -139,7 +139,7 @@ For more complete information, please see the [FAQ page](https://spontan.io/faq)
 5. Limit who can participate with an entry code (free), or further requirements such as VIP (premium feature)
 6. Leave your room open 24x7 (free), or set opening times and/or special events (premium feature)
 7. Ask visitors for donations, or list products for sale with links to your online store (premium feature)
-6. Summary of Spontanio features, comparing basic (*Free4all*) to premium (*BizPlus*)
+8. Summary of Spontanio features, comparing basic (*Free4all*) to premium (*BizPlus*)
 
 == Changelog ==
 
