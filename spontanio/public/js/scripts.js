@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 			iframeNode.setAttribute( 'id', iframeContainer.id + '-iframe' );
 			iframeNode.setAttribute( 'allow', 'microphone;camera' );
-			iframeNode.setAttribute( 'src', 'https://spontan.io/' + roomName + '/embed' );
+			iframeNode.setAttribute( 'src', 'https://spontan.io/' + roomName + '/embed?url=' + encodeURI(document.location.href) );
 			iframeNode.setAttribute( 'title', 'spontanio-iframe' );
 			iframeNode.setAttribute( 'width', '100%' );
 			iframeNode.setAttribute( 'style', 'height: calc(100% - 24px);' );

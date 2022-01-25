@@ -4,7 +4,7 @@
 Plugin Name:       Spontanio
 Plugin URI:        https://spontan.io
 Description:       Free group video chat for your website! Super easy to set up and use. Customize for your brand. Options for selling, scheduling, and more.
-Version:           1.0.0
+Version:           1.1.1
 Requires at least: 5.4
 Requires PHP:      5.6
 Author:            Spontanio
